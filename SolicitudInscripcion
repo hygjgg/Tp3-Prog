@@ -1,0 +1,24 @@
+import java.time.LocalDate;
+
+public class SolicitudInscripcion {
+    private Estudiante estudiante;
+    private String materia;
+    private LocalDate fechaSolicitud;
+    private String estado; // pendiente, aprobada, rechazada
+
+    public SolicitudInscripcion(Estudiante e, String materia) {
+        this.estudiante = e;
+        this.materia = materia;
+        this.fechaSolicitud = LocalDate.now();
+        this.estado = "pendiente";
+    }
+
+    public void setEstado(String estado) {
+        this.estado = estado;
+    }
+
+    @Override
+    public String toString() {
+        return estudiante + " → " + materia + " (" + estado + ")";
+    }
+}
